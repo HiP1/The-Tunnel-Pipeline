@@ -1,0 +1,57 @@
+cff-version: 1.2.0
+title: >-
+  The Tunnel Pipeline: What Gets Lost, What It Costs, and the Case for PARIA
+message: >-
+  If you use or reference this work, please cite it using the metadata below.
+type: article
+authors:
+  - family-names: Phan
+    given-names: Ivan
+    orcid: "https://orcid.org/0009-0003-1095-5855"
+    affiliation: Independent Researcher
+date-released: "2026-04-27"
+doi: "10.5281/zenodo.19804186"
+license: CC-BY-4.0
+url: "https://hip1.github.io/tunnel-pipeline/"
+repository: "https://github.com/HiP1/tunnel-pipeline"
+abstract: >-
+  Every AI training pipeline contains a judgment pipeline: the chain of events
+  from criterion selection through evaluator judgment to training-signal
+  aggregation and weight update. This paper identifies five structural conditions
+  the judgment pipeline must satisfy (the PARIA framework: Preservation,
+  Adequacy, Reproducibility, Independence, Accountability), demonstrates
+  non-redundancy by counterexample, and grounds the framework in a seven-class
+  cross-pipeline diagnostic with peer-reviewed empirical anchors. The economic
+  argument, anchored in the OECD's Value of Statistical Life methodology and
+  measured cost data across six domains, establishes that correctness failures
+  are cost categories whose externalisation current industry accounting obscures.
+  A case study of AI medical scribes demonstrates the condition-satisfaction
+  paradox. Third paper in the open-ended Training Landscape series.
+keywords:
+  - AI training pipelines
+  - PARIA framework
+  - judgment pipeline
+  - evaluation methodology
+  - RLHF
+  - verdict preservation
+  - criterion adequacy
+  - evaluator independence
+  - structural accountability
+  - AI safety
+  - cost externalisation
+  - AI medical scribes
+references:
+  - type: article
+    title: "Uncertainty Collapse in post-trained language models"
+    authors:
+      - family-names: Phan
+        given-names: Ivan
+    doi: "10.5281/zenodo.19482051"
+    date-released: "2026-04"
+  - type: article
+    title: "The Judgment Paradox"
+    authors:
+      - family-names: Phan
+        given-names: Ivan
+    doi: "10.5281/zenodo.19594378"
+    date-released: "2026-04"
