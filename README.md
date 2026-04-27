@@ -10,7 +10,7 @@
 
 ## Read the paper
 
-**[Read online (HTML)](https://hip1.github.io/tunnel-pipeline/the-tunnel-pipeline.html)** · [Download PDF](the-tunnel-pipeline.pdf) · [Markdown source](the-tunnel-pipeline.md)
+**[Read online (HTML)](https://hip1.github.io/The-Tunnel-Pipeline/the-tunnel-pipeline.html)** · [Download PDF](the-tunnel-pipeline.pdf) · [Markdown source](the-tunnel-pipeline.md)
 
 ---
 

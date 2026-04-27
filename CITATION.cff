@@ -12,8 +12,8 @@ authors:
 date-released: "2026-04-27"
 doi: "10.5281/zenodo.19804186"
 license: CC-BY-4.0
-url: "https://hip1.github.io/tunnel-pipeline/"
-repository: "https://github.com/HiP1/tunnel-pipeline"
+url: "https://hip1.github.io/The-Tunnel-Pipeline/"
+repository: "https://github.com/HiP1/The-Tunnel-Pipeline"
 abstract: >-
   Every AI training pipeline contains a judgment pipeline: the chain of events
   from criterion selection through evaluator judgment to training-signal
