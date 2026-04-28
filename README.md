@@ -16,7 +16,9 @@
 
 ## Summary
 
-Every AI training pipeline contains a judgment pipeline: the chain of events from criterion selection through evaluator judgment to training-signal aggregation and weight update. This paper identifies five structural conditions the judgment pipeline must satisfy, collectively the **PARIA framework**:
+AI adoption is accelerating at unprecedented scale, with major platforms collectively serving billions of weekly users. The question is no longer whether AI will be deployed but whether the judgment pipelines that train and evaluate it are structurally sound.
+
+Every AI training pipeline contains a judgment pipeline: the chain of events from criterion selection through evaluator judgment to training-signal aggregation and weight update. This paper identifies five structural conditions the judgment pipeline must satisfy for deployment to create value rather than externalise cost. Collectively the **PARIA framework**:
 
 - **P**reservation — Does the verdict record carry the judgment's epistemic content forward intact?
 - **A**dequacy — Does the criterion measure the right property on the right slice of cases?
@@ -26,13 +28,15 @@ Every AI training pipeline contains a judgment pipeline: the chain of events fro
 
 Non-redundancy is demonstrated by counterexample. A seven-class cross-pipeline diagnostic grounds the framework in peer-reviewed independent evaluations. Under autoregressive transformers, condition failures map to documented deployment pathologies: sycophancy, fabrication, reward hacking, proxy collapse, and calibration collapse.
 
-The economic argument, grounded in the OECD's Value of Statistical Life methodology and measured cost data across six domains (healthcare, law, software engineering, employment, finance, psychiatry), establishes that correctness failures are cost categories whose externalisation current industry accounting obscures.
+The economic argument has two sides. The cost side, grounded in the OECD's Value of Statistical Life methodology and measured data across six domains (healthcare, law, software engineering, employment, finance, psychiatry), establishes that correctness failures are cost categories whose externalisation current industry accounting obscures. The value side is developed through a case study of AI medical scribes: a deployment where the AI's raw error rate is 70% produces measurable institutional value (29% documentation time reduction, 21% burnout reduction) because the deployment architecture satisfies all five conditions, while also revealing the structural vulnerability of that satisfaction to accountability drift.
 
-A case study of AI medical scribes demonstrates the condition-satisfaction paradox: a deployment where the AI's raw error rate is 70% produces measurable institutional value because the deployment architecture satisfies all five conditions, while also revealing the structural vulnerability of that satisfaction to accountability drift.
+The conditions are not aspirational: formal-verification pipelines and architecturally sound deployments already satisfy them. The framework specifies what the broader landscape needs to deliver for AI adoption to produce the value the technology makes possible.
 
 ## Figure
 
 ![The Tunnel Pipeline — Same structure, different material](PARIA_Framework.jpg)
+
+*Left: current training pipelines with opaque material blocking signals, producing proxy collapse, sycophancy, reward hacking, fabrication, and calibration collapse. Right: PARIA conditions satisfied, transparent material preserving signal integrity through to the verdict record.*
 
 ## Series
 
@@ -50,7 +54,7 @@ The HTML reading shell is self-contained. To rebuild from updated markdown:
 node scripts/build-paper.mjs the-tunnel-pipeline.md the-tunnel-pipeline.html --template scripts/paper-template.html
 ```
 
-See `scripts/build-paper.mjs` header for markdown conventions.
+See `scripts/build-paper.mjs` header for markdown conventions (argumentative labels, verdict-glyph tables, `==highlight==` syntax, reading guide blocks, AI note blocks).
 
 ## Citation
 
@@ -69,4 +73,4 @@ See `scripts/build-paper.mjs` header for markdown conventions.
 
 ## Methodology
 
-Developed through structured human-AI collaboration. Methodology and model versions in §14 of the paper. Editorial authority and accountability: the human author alone.
+Developed through structured human-AI collaboration using the adversarial triad methodology. Claude Opus 4.7 (outline), Claude Opus 4.6 (Weaver/prose), ChatGPT 5.4 Thinking (Surgeon/structural review), Gemini 3.1 Pro (Alchemist/mechanistic review). Editorial authority and accountability: the human author alone. Full methodology in §14.
