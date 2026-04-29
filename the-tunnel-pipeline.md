@@ -699,6 +699,8 @@ The framework handles this without a sixth condition. Evaluator selection is its
 
 The Ansari case (2026) illustrates a different route. One hundred AI-generated hallucinated citations were accepted at NeurIPS 2025, evading review by three to five expert reviewers per paper. These are among the most competent evaluators available in the field. Competence was near ceiling. The failure routes through two conditions simultaneously. First, preservation: the fabricated citations preserved the authoritative register while destroying truth-value markers, and the pipeline's training signal did not encode the distinction between factual and fabricated content in that register. The evaluators were exploited by a surface that looked right while the epistemic content was absent. Second, independence: the reviewers shared an assumption with the authors that citations had been pre-verified. That shared assumption constitutes an error-mode overlap on the citation-verification dimension. The reviewer's trust in the citation's apparent legitimacy overlapped with the author's (fabricated) assertion of that legitimacy. A cross-domain reviewer (§12.3) would not share this domain-specific trust pattern, which is why the independence-over-count prediction specifies evaluator diversity rather than evaluator volume as the structural fix.
 
+A secondary explanation is consistent with trend data. Studies measuring AI-generated content in peer reviews at comparable venues found 15.8% of ICLR 2024 reviews were AI-assisted (Latona et al. 2024), rising to 21% fully AI-generated at ICLR 2026 (Abdulhai et al. 2026, citing Pangram Labs detection). If a comparable proportion of NeurIPS 2025 reviews were AI-mediated, some reviews of the Ansari papers may have been written or substantially edited by AI systems. An AI reviewer given a "review this paper" prompt evaluates the plausibility of citation format, not the existence of the cited work. The AI could verify citations with tool use, but the task framing ("review this paper," "improve my review") does not include citation verification. That is an adequacy failure at the reviewer-instruction judgment step: the criterion applied to the AI reviewer did not include the verification the task required. If any of the reviews were AI-mediated, the independence failure becomes total rather than partial on the citation-verification dimension, because the AI evaluator shares the same architectural limitation as the AI that generated the fabricated citations. This reading is inferential, not confirmed for the specific NeurIPS 2025 reviews. The trend data makes it plausible. Even if correctly instructed to verify citations, an AI reviewer might spot-check a subset and report the task as complete, producing verification-shaped output without verification substance. That failure mode is developed in the next paper in this series.
+
 The general principle: when the evaluator lacks the capacity to resolve the criterion, the failure routes through the evaluator-selection judgment step (where the conditions apply recursively). When a competent evaluator is exploited, the failure routes through preservation (surface features mask missing epistemic content) or independence (shared assumptions create error-mode overlap). Both routes prescribe specific corrective actions. A separate competence condition would add a label without adding a new intervention target.
 
 ---
@@ -923,6 +925,16 @@ Wiley (1998) demonstrated that domain knowledge acts as a mental set: experts' w
 
 **Null scope.** If structural-level interventions fail to transport, the framework's condition-identification is wrong for the specific condition targeted. If evaluator independence does not reduce shared error modes, the independence condition's failure-mode mapping is wrong. Each condition's contribution is independently testable, and failure of one prediction does not falsify the others.
 
+### §12.4 Systemic erosion of condition-satisfiability
+
+The condition failures documented in §4 and §10 occur at specific judgment steps within specific pipelines. A distinct threat operates at the infrastructure level: the population of evaluators capable of providing independent judgment may be shrinking as AI tool adoption increases, making the conditions structurally harder to satisfy over time.
+
+Two recent studies provide early measurements. Abdulhai et al. (2026, Google DeepMind/UC Berkeley/University of Washington) found that AI-generated peer reviews at ICLR 2026 assigned scores a full point higher on average and were 32% less likely to credit clarity as a strength. The evaluative criteria applied by AI reviewers differ systematically from those applied by humans, and the difference favours acceptance. Röttger et al. (2026, Oxford/UK AI Security Institute, N = 2,939 writers, N = 11,091 readers) found that AI writing assistance homogenised perceived writer personas across 22 of 29 measured dimensions. Writers objected to many of the observed distortions but still preferred the AI-assisted text.
+
+The implications for PARIA's conditions are compound. Independence: if evaluators routinely use AI tools, their cognitive patterns and judgment criteria converge toward the AI's patterns over time. The evaluator does not need to share architecture with the producer. Shared tool use is sufficient to erode the non-overlapping error modes that independence requires. Preservation: Abdulhai et al. found that even "grammar-only" AI editing changes semantic meaning. If evaluators use AI to write their evaluation reports, the corrective signal they intended is distorted before it reaches anyone. The verdict record carries different semantic content than the evaluator meant. Accountability: if AI-mediated feedback softens corrective language (a documented effect of AI editing toward more positive, diplomatic phrasing), the feedback loop's corrective pressure is reduced.
+
+This erosion is distinct from the failures documented elsewhere in the paper, which can be addressed by satisfying the conditions more strongly at specific judgment steps. The systemic threat is that the conditions themselves become harder to satisfy because the human evaluators who provide the independence, accountability, and preservation the framework requires are having their judgment shaped by the same family of systems the framework evaluates. The §11.4 Bainbridge irony, applied here at the infrastructure level: the more AI tools improve, the more humans use them, the less capable humans become of providing the independent evaluation those tools require. The trajectory documented by Latona et al. (2024: 15.8% AI-assisted reviews at ICLR), Abdulhai et al. (2026: 21% fully AI-generated at ICLR), and the Nature survey (2026: 50% of academics using AI while peer reviewing) suggests this erosion is accelerating.
+
 ---
 
 ## §13 Series relationships
@@ -980,6 +992,8 @@ The conditions are not aspirational. RLVR pipelines with formal verification sat
 ---
 
 ## References
+
+Abdulhai, M., Jaques, N., Tsvetkov, Y., Sap, M., Ritter, S., Celikyilmaz, A. and Albalak, A. (2026). How LLMs distort our written language. arXiv:2603.18161.
 
 Ambrogi, R. J. (2024). Interview with Thomson Reuters executive on Westlaw AI-Assisted Research. February 2024.
 
@@ -1063,6 +1077,8 @@ Lambert, N. (2026). *Reinforcement Learning from Human Feedback*. Online: rlhfbo
 
 Laurenzo, S. (2026). [MODEL] Claude Code is unusable for complex engineering tasks with the Feb updates. GitHub issue #42796, anthropics/claude-code, 2 April 2026. https://github.com/anthropics/claude-code/issues/42796
 
+Latona, L., Ribeiro, M. T., Dusek, O. and Dwivedi-Yu, J. (2024). Monitoring AI-modified content at scale: A case study on the impact of ChatGPT on AI conference peer reviews. arXiv:2403.07183.
+
 Liang, P., Bommasani, R., Lee, T. et al. (2023). Holistic evaluation of language models. *Annals of the New York Academy of Sciences* 1525(1):140–146. DOI: 10.1111/nyas.15007.
 
 Lineberry, M., Kreiter, C. D. and Bordage, G. (2013). Threats to validity in the use and interpretation of script concordance test scores. *Medical Education* 47(12):1175–1183. DOI: 10.1111/medu.12283.
@@ -1108,6 +1124,8 @@ Phan, I. [HiP] (2026d). The Pedagogical Inversion: Confidence inheritance and th
 Phan, I. [HiP] (2026e). The Confidence Curriculum series. Papers 1–5 and Introduction. https://hip1.github.io/confidence-curriculum/.
 
 Rafailov, R. et al. (2024). Scaling laws for reward model overoptimization in direct alignment algorithms. *Advances in Neural Information Processing Systems (NeurIPS)* 37:126207–126242.
+
+Röttger, P., Hackenburg, K., Kirk, H. R. and Summerfield, C. (2026). Measuring and mitigating persona distortions from AI writing assistance. arXiv:2604.22503.
 
 Sculley, D., Holt, G., Golovin, D., Davydov, E., Phillips, T., Ebner, D., Chaudhary, V., Young, M., Crespo, J.-F. and Dennison, D. (2015). Hidden technical debt in machine learning systems. *Advances in Neural Information Processing Systems* 28:2503–2511.
 
