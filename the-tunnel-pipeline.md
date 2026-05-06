@@ -142,6 +142,8 @@ Anthropic's own deployment-scale measurement confirms the pattern (Shen et al. 2
 
 **Operationalisation.** Identify the evaluator's error modes, identify the producer's error modes, identify the criterion's failure manifold. Strong independence holds when the error-mode overlap on the criterion manifold is empty. Weak independence holds when evaluators and producers are architecturally distinct but the overlap is non-empty. The gap between weak and strong independence is the space where sycophancy, shared bias, and correlated-error propagation operate.
 
+**Grounding.** The structural requirement has a precise computer-science analogue. Thompson's (1984) Turing Award lecture demonstrated that a system cannot be fully verified using only tools provided by that system: a compromised compiler inserts backdoors into any program it compiles, including copies of itself, and inspecting the source code does not help because the compromised compiler is the inspection tool. When the evaluator's capabilities are shaped by the same training signal as the producer, the evaluation inherits whatever compromises the training introduced. Independence requires that the verification chain bottoms out in something external to the system being verified.
+
 **Portrait thread.** The commercial portraitist's economic dependence on the patron creates evaluator-producer overlap on the dimension the criterion measures: the artist's livelihood depends on the patron's satisfaction, and the patron wants flattery. The physionotrace partially removes interpretive latitude, but the operator still chooses angle, lighting, and moment. Film photography captures what is there, but the selection of which frame to print reintroduces the photographer's judgment. Digital processing displaces the independence problem to post-production: filters, retouching, and AI enhancement. Each technological step moves the bias to a different stage rather than eliminating it.
 
 ### §2.3 Structural accountability
@@ -198,7 +200,7 @@ The framework-relevant variable is natural-language context variation across que
 
 **Statement.** The training signal faithfully carries the judgment's epistemic content across the chain from evaluator to weight update.
 
-**Grounding.** The Judgment Paradox (§5) establishes the information-destruction mechanism: preference-rank aggregation destroys annotator reasoning, cross-review signals, and disagreement structure. The destruction is not an implementation detail. It is a structural property of the aggregation step. When a preference pair is reduced to a binary comparison, the reasoning behind each preference is lost, the confidence of each assessment is lost, and the distribution of assessments across multiple evaluators is lost.
+**Grounding.** The Judgment Paradox (§5) establishes the information-destruction mechanism: preference-rank aggregation destroys annotator reasoning, cross-review signals, and disagreement structure. The destruction is not an implementation detail. It is a structural property of the aggregation step. When a preference pair is reduced to a binary comparison, the reasoning behind each preference is lost, the confidence of each assessment is lost, and the distribution of assessments across multiple evaluators is lost. The distinction between weak and strong preservation has a parallel in the interpretability literature: Jacovi and Goldberg (2020) distinguish faithfulness (an explanation accurately reflects the model's actual reasoning process) from plausibility (an explanation that looks convincing to humans). A scalar reward is plausible: it looks like a judgment was made. It is not faithful: it does not preserve the judgment process that produced it. Strong preservation is the training-pipeline equivalent of faithfulness applied to the verdict.
 
 Cole, Cole, and Simon (1981, *Science* 214:881–886) establish the baseline that makes this destruction consequential. Their evaluation of 150 NSF proposals re-evaluated by new reviewers found that reviewer-draw dominated funding decisions: the same proposal received substantially different evaluations depending on which reviewers were assigned. Cicchetti's (1991) meta-analysis across fields reports inter-rater reliability of κ = 0.18–0.37 for expert peer review. At these baseline reliability levels, evaluator disagreement on identical material is not noise to be collapsed. It is the distribution of legitimate expert judgment. Collapsing it to a single aggregate destroys information that is structurally recoverable only by preserving the distribution.
 
@@ -1047,6 +1049,8 @@ Anthropic (2026b). Evaluating Claude for bioinformatics with BioMysteryBench. an
 
 Barendregt, H. and Wiedijk, F. (2005). The challenge of computer mathematics. *Philosophical Transactions of the Royal Society A* 363(1835):2351–2375.
 
+Bainbridge, L. (1983). Ironies of automation. *Automatica* 19(6):775–779. DOI: 10.1016/0005-1098(83)90046-8.
+
 Bean, A. M., Payne, R. E., Parsons, G., Kirk, H. R. et al. (2026). Reliability of LLMs as medical assistants for the general public: A randomized preregistered study. *Nature Medicine* 32:609-615. DOI: 10.1038/s41591-025-04074-y.
 
 Biro, J., Handley, J. L., Cobb, N. K., Kottamasu, V., Collins, J., Krevat, S. and Ratwani, R. M. (2025). Accuracy and safety of AI-enabled scribe technology: Instrument validation study. *Journal of Medical Internet Research* 27:e64993. DOI: 10.2196/64993.
@@ -1093,6 +1097,8 @@ Gebru, T., Morgenstern, J., Vecchione, B. et al. (2021). Datasheets for datasets
 
 Gong, E. J., Bang, C. S., Lee, J. J. and Baik, G. H. (2025). Knowledge-practice performance gap in clinical large language models: systematic review of 39 benchmarks. *Journal of Medical Internet Research* 27:e84120. DOI: 10.2196/84120.
 
+Goodhart, C. A. E. (1984). Problems of monetary management: The U.K. experience. In *Monetary Theory and Practice*, 91–121. Macmillan. Originally presented 1975.
+
 Greenblatt, R. et al. (2024). Alignment faking in large language models. arXiv:2412.14093.
 
 He, H., Ye, Y., Liu, J., Liang, J., Wang, Z., Yuan, Z., Wang, X., Mao, H., Wan, P. and Pan, L. (2025). GARDO: Reinforcing diffusion models without reward hacking. arXiv:2512.24138.
@@ -1106,6 +1112,8 @@ Huet, E. and Metz, R. (2025). The chatbot delusions. *Bloomberg Businessweek*, 7
 Heaven, W. D. (2025). What you may have missed about GPT-5. *MIT Technology Review*, 12 August 2025.
 
 Huang, J. et al. (2024). Large language models cannot self-correct reasoning without external feedback. In *International Conference on Learning Representations (ICLR)*.
+
+Jacovi, A. and Goldberg, Y. (2020). Towards faithfully interpretable NLP systems: How should we define and evaluate faithfulness? In *Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics (ACL)*, 4198–4205. DOI: 10.18653/v1/2020.acl-main.386.
 
 Kanaujia, A., Scheurer, S. and Arora, S. (2024). AdvNF: Reducing mode collapse in conditional normalizing flows using adversarial learning. *SciPost Physics* 16:132.
 
@@ -1183,6 +1191,8 @@ Shen, J. H., Carter, S., Dargan, R., Gillotte, J., Handa, K., Hong, J., Huang, S
 Shumailov, I., Shumaylov, Z., Zhao, Y., Papernot, N., Anderson, R. and Gal, Y. (2024). AI models collapse when trained on recursively generated data. *Nature* 631:755–759. DOI: 10.1038/s41586-024-07566-y.
 
 Stokel-Walker, C. (2026). Scientists invented a fake disease. AI told people it was real. *Nature*, d41586-026-01100-y, 7 April 2026.
+
+Thompson, K. (1984). Reflections on trusting trust. *Communications of the ACM* 27(8):761–763. DOI: 10.1145/358198.358210. Turing Award Lecture.
 
 Thunström, A. O. et al. (2024). Bixonimania preprints. SciProfiles and Preprints.org, March 2024. Taken down 10 April 2026. Described in Stokel-Walker (2026).
 
